@@ -5,12 +5,13 @@ const connectDB =  require('./db/connect')
 require('dotenv').config()
 
 // Middleware 
+app.use(express.static('./public'))
 app.use(express.json())  // Without this json format mein nahi aayega data
 
-app.get('/',(req,res)=>{
-    res.send("welcome to our page") 
-    res.end()
-})
+// app.get('/',(req,res)=>{
+//     res.send("welcome to our page") 
+//     res.end()
+// })
 
 app.use('/api/v1/tasks',tasks)
 
